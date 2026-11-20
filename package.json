@@ -1,0 +1,23 @@
+{
+  "name": "project-game",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^26.6.6",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
+    "canvas-confetti": "^1.9.4",
+    "lucide": "^1.77.0",
+    "phaser": "^3.88.2"
+  }
+}

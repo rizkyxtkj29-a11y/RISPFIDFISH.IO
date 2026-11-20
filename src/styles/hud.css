@@ -1,0 +1,472 @@
+/* HUD TOP BAR */
+.hud-top {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none; /* children enable pointer events */
+}
+
+.hud-section-left,
+.hud-section-center,
+.hud-section-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+/* Brand Logo Badge */
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(11, 83, 103, 0.9), rgba(18, 61, 80, 0.95));
+  border: 1.5px solid rgba(54, 166, 92, 0.5);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.brand-icon {
+  font-size: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #FFFFFF, var(--color-gold-coin));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Level & Profile Badge */
+.profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-aqua-green), var(--color-ocean-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 1.5px solid #FFFFFF;
+}
+
+.level-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.level-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.xp-bar-container {
+  width: 70px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-aqua-green), #80ED99);
+  transition: width 0.3s ease;
+}
+
+/* Coins Badge */
+.coins-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--color-gold-coin);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.coin-icon {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, #FFE6A7, var(--color-gold-coin) 70%, #D48B00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  color: #5C3D00;
+  box-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
+}
+
+/* Water Quality Badge */
+.water-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+}
+
+.water-indicator-bar {
+  width: 55px;
+  height: 7px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.water-indicator-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00B4D8, #90E0EF);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.btn-clean-mini {
+  padding: 3px 8px;
+  background: var(--color-ocean-blue);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.btn-clean-mini:hover {
+  background: var(--color-aqua-green);
+}
+
+/* Capacity Badge */
+.capacity-badge {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+/* Auth / Sync Status Badge */
+.sync-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.sync-badge.online {
+  background: rgba(54, 166, 92, 0.25);
+  border: 1px solid var(--color-aqua-green);
+  color: #80ED99;
+}
+
+.sync-badge.offline {
+  background: rgba(230, 57, 70, 0.2);
+  border: 1px solid rgba(230, 57, 70, 0.5);
+  color: #FFB4A2;
+}
+
+.sync-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.sync-badge.online .sync-dot { background: #80ED99; box-shadow: 0 0 6px #80ED99; }
+.sync-badge.offline .sync-dot { background: #FFB4A2; }
+
+/* Icon Button (Audio, Settings) */
+.btn-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-trans);
+  border: 1px solid var(--color-glass-border);
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.btn-icon:hover {
+  background: var(--color-ocean-blue);
+}
+
+/* Volume Control Box in Top HUD */
+.volume-control-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface-trans);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 3px 8px 3px 3px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-glass-border);
+}
+
+.volume-slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 65px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-aqua-green);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 6px rgba(128, 237, 153, 0.8);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-aqua-green);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 6px rgba(128, 237, 153, 0.8);
+  cursor: pointer;
+}
+
+.volume-percent-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  min-width: 28px;
+  text-align: right;
+}
+
+/* HUD BOTTOM NAVIGATION DOCK */
+.hud-bottom {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(18, 61, 80, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, var(--color-ocean-blue), var(--color-aqua-green));
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(54, 166, 92, 0.4);
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Notification badge on mission / achievement */
+.nav-badge-dot {
+  position: absolute;
+  top: 4px;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-gold-coin);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--color-gold-coin);
+}
+
+/* Special FEED Button */
+.nav-item-feed {
+  background: linear-gradient(135deg, #FFB703, #FB8500);
+  color: #123D50 !important;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(251, 133, 0, 0.4);
+}
+.nav-item-feed:hover {
+  background: linear-gradient(135deg, #FFC328, #FFA028);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Floating Toast Notifications */
+.toast-container {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.toast {
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(18, 61, 80, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  animation: toastFade 2.8s forwards;
+}
+
+.toast.success {
+  border-color: var(--color-aqua-green);
+  color: #80ED99;
+}
+.toast.error {
+  border-color: #E63946;
+  color: #FFB4A2;
+}
+
+@keyframes toastFade {
+  0% { opacity: 0; transform: translateY(-10px) scale(0.95); }
+  10% { opacity: 1; transform: translateY(0) scale(1); }
+  80% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-15px) scale(0.95); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px), (max-height: 520px) {
+  .hud-top {
+    left: max(8px, env(safe-area-inset-left, 8px));
+    right: max(8px, env(safe-area-inset-right, 8px));
+    top: max(6px, env(safe-area-inset-top, 6px));
+    gap: 6px;
+  }
+  .brand-badge {
+    padding: 4px 10px;
+  }
+  .brand-badge span.brand-title {
+    display: none;
+  }
+  .profile-badge {
+    padding: 3px 8px;
+    gap: 6px;
+  }
+  .profile-avatar {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  .xp-bar-container {
+    width: 48px;
+    height: 4px;
+  }
+  .level-text {
+    font-size: 10.5px;
+  }
+  .coins-badge, .water-badge, .capacity-badge {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+  .water-bar-container {
+    width: 45px;
+    height: 5px;
+  }
+  .btn-clean-tank {
+    padding: 2px 7px;
+    font-size: 9.5px;
+  }
+  .hud-bottom {
+    bottom: max(6px, env(safe-area-inset-bottom, 6px));
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 14px;
+    max-width: 96vw;
+  }
+  .btn-feed-primary {
+    padding: 6px 14px;
+    font-size: 11px;
+    border-radius: 10px;
+  }
+  .btn-feed-primary .feed-icon {
+    font-size: 14px;
+  }
+  .nav-item {
+    padding: 4px 8px;
+    font-size: 9.5px;
+    border-radius: 8px;
+    gap: 2px;
+  }
+  .nav-item .nav-icon {
+    font-size: 13px;
+  }
+  .volume-slider {
+    width: 42px;
+  }
+  .volume-percent-label {
+    display: none;
+  }
+}

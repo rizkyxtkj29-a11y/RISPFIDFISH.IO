@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="description" content="RISPFID FISH - Game simulasi memelihara ikan akuarium berbasis web dengan konsep koleksi ikan air tawar khas Nusantara Indonesia." />
+    <title>RISPFID FISH — Simulasi Akuarium Ikan Air Tawar Nusantara</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="phaser-container"></div>
+
+      <!-- Overlay Peringatan Rotasi Layar (Mobile Portrait Warning) -->
+      <div id="rotate-overlay" class="rotate-overlay">
+        <div class="rotate-card">
+          <div class="rotate-device-anim">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-display">
+                <span class="phone-fish-icon">🐟</span>
+              </div>
+            </div>
+            <div class="rotate-curved-arrow">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M40 24A16 16 0 1 0 28 39.5" />
+                <polyline points="28 32 28 40 36 40" />
+              </svg>
+            </div>
+          </div>
+          
+          <div class="rotate-text-group">
+            <div class="rotate-badge">
+              <span class="badge-dot"></span>
+              <span>MODE LANDSCAPE DIPERLUKAN</span>
+            </div>
+            <h2>Putar Ponsel ke Posisi Mendatar</h2>
+            <p>
+              Akuarium <strong>RISPFID FISH</strong> dirancang khusus dalam orientasi <em>Landscape</em> agar pemandangan aquascape dan gerakan ikan tampak luas, jernih, dan nyata.
+            </p>
+          </div>
+
+          <div class="rotate-actions">
+            <button id="btn-fullscreen-landscape" class="btn-fullscreen-rotate" type="button">
+              <span class="btn-icon">⛶</span>
+              <span>Kunci Layar Landscape</span>
+            </button>
+          </div>
+          <div class="rotate-hint">
+            <span>💡 Pastikan fitur <strong>Auto-Rotate</strong> di pengaturan ponsel Anda telah aktif</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
